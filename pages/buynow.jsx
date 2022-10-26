@@ -23,11 +23,11 @@ const BuyNow = () => {
 
 
     return (
-        <div className="bg-neutral-800 h-[100vh] flex justify-center flex-col items-center py-36 text-white " >
-            <h2 className="font-display text-4xl lg:text-5xl font-light italic " > Track Name: <span className="not-italic font-normal border-b-2" >Jinghani</span> </h2>
+        <div className="bg-neutral-800 flex justify-center flex-col items-center py-36 text-white " >
+            <h2 className="font-display text-2xl lg:text-5xl font-light italic " > Track Name: <span className="not-italic font-normal border-b-2" >Mide Bhuyer</span> </h2>
 
-            <h2 className="font-type text-2xl mt-7">Price: ৳50.00 Only</h2>
-            <div >
+            <h2 className="font-type text-xl mt-7">Price: ৳50.00 Only</h2>
+            <div className='w-full' >
                 <form onSubmit={handleSubmit} className='font-type mt-24 flex flex-col gap-7 w-full lg:w-auto px-10 lg:px-0' >
 
                     <div className='flex flex-col items-start xl:justify-between' >
