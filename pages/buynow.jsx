@@ -1,21 +1,44 @@
+import { useRouter } from 'next/router';
 import React from 'react';
 import { toast } from 'react-toastify';
 
 const BuyNow = () => {
 
-    const handleSubmit = (e) => {
+    const router = useRouter();
+
+    const handleSubmit = async(e) => {
         e.preventDefault();
 
-        const data = {
-            name: e.target.fullname.value,
-            email: e.target.email.value,
-            bkashNumber: e.target.bkash.value,
-            transaction_id: e.target.transaction_id.value
+      
 
+        const settings = {
+            method: 'POST',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                name: e.target.fullname.value,
+                email: e.target.email.value,
+                bkashNumber: e.target.bkash.value,
+                transaction_id: e.target.transaction_id.value,
+                verified: false
+    
+            })
+        };
+
+
+        const res = await fetch('http://localhost:3000/api/buyapi',settings);
+        const result = await res.json();
+
+        if(result.success) {
+            await toast.success('Transaction successful. You will be notified via email shorty');
+            await e.target.reset();
+            await router.push('/')
         }
-        console.log(data);
 
-        toast.success('🦄 Wow so easy!');
+
+      
 
     }
 
@@ -27,7 +50,8 @@ const BuyNow = () => {
             <h2 className="font-display text-2xl lg:text-5xl font-light italic " > Track Name: <span className="not-italic font-normal border-b-2" >Mide Bhuyer</span> </h2>
 
             <h2 className="font-type text-xl mt-7">Price: ৳50.00 Only</h2>
-            <div className='w-full' >
+            <small className="text-center text-red-400 mt-3">All the money earned from this track will be donated for Joya&apos;s cancer treatment</small>
+            <div className='w-full lg:container lg:mx-auto lg:flex lg:justify-center' >
                 <form onSubmit={handleSubmit} className='font-type mt-24 flex flex-col gap-7 w-full lg:w-auto px-10 lg:px-0' >
 
                     <div className='flex flex-col items-start xl:justify-between' >
@@ -40,7 +64,7 @@ const BuyNow = () => {
                     </div>
                     <div className='flex flex-col items-start xl:justify-between' >
                         <h2>Your Bkash Number</h2>
-                        <small className='mt-2' >Send ৳500 to: 01687479135</small>
+                        <small className='mt-2' >Send ৳50 to: </small>
                         <input type="tel" required name="bkash" className="border-b bg-neutral-800 border-white xl:w-96 py-1 px-2 w-full" />
                     </div>
 

@@ -28,7 +28,7 @@ export default function Home() {
        
         
         >
-          <h2 className="font-display text-4xl lg:text-7xl font-light italic" >New Track: <span className="not-italic font-normal border-b-2" >Jinghani</span> </h2>
+          <h2 className="font-display text-3xl lg:text-7xl font-light italic" >New Track: <span className="not-italic font-normal border-b-2" >Mide Bhuyer</span> </h2>
         </motion.div>
 
         <motion.div className="py-5 lg:ml-24 ml-14" 
@@ -59,7 +59,7 @@ export default function Home() {
           </div>
 
           <div className='flex flex-col justify-center items-center' >
-            <h2 className="mt-10  font-style text-xl font-semibold">Fundraiser for <a className="underline text-red-400" href="https://www.facebook.com/permalink.php?story_fbid=pfbid0kxYnrQENX3pzJSFeyUhQFJPR2mbLDbmenjFqusf3LpMwWaT14Yw2187TtmJZSuGyl&id=100011291106798">Joya Chakma</a></h2>
+            <h2 className="mt-10  font-style text-xl font-semibold">Fundraiser for <a className="underline text-red-400" href="https://www.facebook.com/permalink.php?story_fbid=pfbid0kxYnrQENX3pzJSFeyUhQFJPR2mbLDbmenjFqusf3LpMwWaT14Yw2187TtmJZSuGyl&id=100011291106798">Joya Talukder</a></h2>
             <h2 className="text-center text-neutral-300">All the money earned from this track will be donated for her cancer treatment</h2>
           </div>
 
