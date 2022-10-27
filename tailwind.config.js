@@ -9,7 +9,8 @@ module.exports = {
    
     fontFamily: {
       'display': 'Frank Ruhl Libre',
-      'type': 'Open Sans'
+      'type': 'Open Sans',
+      'extra': 'Bebas Neue'
     }
   },
   plugins: [],

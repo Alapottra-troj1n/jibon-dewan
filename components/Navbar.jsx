@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
+import { BsFacebook,BsInstagram,BsYoutube } from 'react-icons/bs';
 
 const Navbar = () => {
     return (
@@ -7,11 +8,14 @@ const Navbar = () => {
             <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
                 <a className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
                 
-                    <Link href={'/'}><span className="cursor-pointer ml-3 lg:text-4xl text-xl text-white font-light font-display">Jibon Dewan</span></Link>
+                    <Link href={'/'}><span className="cursor-pointer ml-3 lg:text-4xl text-xl text-white  font-extra">Jibon Dewan</span></Link>
                 </a>
-                <nav className="hidden md:ml-auto flex flex-wrap gap-10 items-center lg:text-xl justify-center font-type font-light lg:font-semibold">
-                    <Link href={'/'} className="  hover:text-gray-900"><li className='list-none cursor-pointer hover:text-gray-300 transition-all' >Songs & EPs</li></Link>
-                    <Link href={'/'} className="  hover:text-gray-900"><li className='list-none cursor-pointer hover:text-gray-300 transition-all' >About</li></Link>
+
+                
+                <nav className=" md:ml-auto flex flex-wrap gap-5 items-center lg:text-xl justify-center font-type font-light lg:font-semibold">
+                <a rel='noreferrer' target='_blank'  href="https://www.facebook.com/profile.php?id=100009225777049"><BsFacebook className='cursor-pointer lg:text-2xl hover:text-neutral-200' /></a>
+                <a rel='noreferrer' target='_blank'  href="https://www.instagram.com/jibondewan_jd/"><BsInstagram className='cursor-pointer lg:text-2xl hover:text-neutral-200' /></a>
+                <a rel='noreferrer' target='_blank' href="https://www.youtube.com/channel/UCrMYkZiYT8S-y6qVEWqImow"><BsYoutube className='cursor-pointer lg:text-3xl mt-[1px] hover:text-neutral-200 text-xl' /></a>
                 </nav>
               
             </div>

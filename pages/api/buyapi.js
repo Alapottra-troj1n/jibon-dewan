@@ -6,9 +6,9 @@ export default async function handler(req, res) {
      try{
         const db = await connectDb();
 
-        const {name, email, bkashNumber, transaction_id} = req.body;
+        const {name, email, number, transaction_id, paymentMehod, verified} = req.body;
         console.log(req.body);
-        const results = await db.collection('responses').insertOne({name, email, bkashNumber, transaction_id});
+        const results = await db.collection('responses').insertOne({name, email, number, transaction_id, paymentMehod, verified});
 
         res.send({success: true, message: results});
      }catch(err){
