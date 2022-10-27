@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import { animate, motion } from "framer-motion"
-import { FaPlay,FaPause } from 'react-icons/fa';
+import { FaPlay, FaPause } from 'react-icons/fa';
 import { useRef, useState } from 'react';
 
 export default function Home() {
@@ -21,7 +21,12 @@ export default function Home() {
     <div>
       <Head>
         <title>Jibon Dewan</title>
-        <meta name="description" content="Solo Track Released for Charity" />
+        <meta
+          property="og:title"
+          content="Jibon Dewan | Musician"
+        />
+        <meta name="description" content="Solo Track Released | Mide Boiar " />
+        <meta property="og:image" content={"/jibon.jpg"} />
         <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/651/651717.png" />
       </Head>
 
@@ -52,8 +57,8 @@ export default function Home() {
         >
 
           <div>
-          <Image src={'/album.png'} height="420" alt='album' width="606" />
-          <audio onEnded={handleEnded} ref={song} src="/songdemo.wav"></audio>
+            <Image src={'/album.png'} height="420" alt='album' width="606" />
+            <audio onEnded={handleEnded} ref={song} src="/songdemo.wav"></audio>
           </div>
 
 
@@ -77,21 +82,21 @@ export default function Home() {
           </div>
 
           <div className="mt-5 flex items-center justify-center gap-3" >
-          {isPlaying ? <FaPause className="text-xl cursor-pointer" onClick={()=> {
-            song.current.pause()
-            setIsPlaying(!isPlaying)
-          }} /> : <FaPlay className="text-xl cursor-pointer" onClick={()=> {
-            
-            song.current.play()
-            setIsPlaying(!isPlaying)
-          
-          }
+            {isPlaying ? <FaPause className="text-xl cursor-pointer" onClick={() => {
+              song.current.pause()
+              setIsPlaying(!isPlaying)
+            }} /> : <FaPlay className="text-xl cursor-pointer" onClick={() => {
 
-          } /> }
-          <h2 className="font-display" >Play Demo</h2>
+              song.current.play()
+              setIsPlaying(!isPlaying)
+
+            }
+
+            } />}
+            <h2 className="font-display" >Play Demo</h2>
           </div>
 
-      
+
 
           <div className='flex flex-col justify-center items-center' >
             <h2 className="mt-10  font-style text-xl font-semibold">Fundraiser for <a className="underline text-red-400" href="https://www.facebook.com/permalink.php?story_fbid=pfbid0kxYnrQENX3pzJSFeyUhQFJPR2mbLDbmenjFqusf3LpMwWaT14Yw2187TtmJZSuGyl&id=100011291106798">Joya Talukder</a></h2>
