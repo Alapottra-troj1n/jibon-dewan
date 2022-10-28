@@ -45,7 +45,6 @@ const BuyNow = () => {
 
     }
 
-    console.log(paymentMehod);
 
 
 

@@ -34,7 +34,7 @@ export default function Home() {
 
 
 
-      <div className="bg-[url('/jibon.jpg')] bg-cover bg-center lg:bg-[center_top_-56rem] h-[100vh] bg-no-repeat w-full lg:bg-fixed flex gap- flex-col justify-center items-center text-white px-4 lg:px-0" >
+      <div className="bg-[url('/jibon.jpg')] bg-cover bg-center  h-[100vh] bg-no-repeat w-full lg:bg-fixed flex  flex-col justify-center items-center text-white px-4 lg:px-0" >
         <motion.div
           initial={{
             opacity: 0,
@@ -78,7 +78,7 @@ export default function Home() {
         >
 
           <div>
-            <Link href={'/buynow'} ><button className="bg-white  text-slate-700 lg:px-12 px-8 py-3 lg:py-4 font-semibold font-type cursor-pointer hover:bg-gray-300 transition-all lg:rounded-md ">BUY NOW !</button></Link>
+            <Link href={'/buynow'} ><button className="bg-white  text-slate-700 lg:px-12 px-8 py-3 lg:py-4 font-semibold font-type cursor-pointer hover:bg-gray-300 transition-all rounded-md ">BUY NOW !</button></Link>
           </div>
 
           <div className="mt-5 flex items-center justify-center gap-3" >
