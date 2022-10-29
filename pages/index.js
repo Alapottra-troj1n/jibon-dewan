@@ -34,18 +34,18 @@ export default function Home() {
 
 
 
-      <div className="bg-[url('/jibon.jpg')] bg-cover bg-center  h-[100vh] bg-no-repeat w-full lg:bg-fixed flex  flex-col justify-center items-center text-white px-4 lg:px-0" >
+      <motion.div className="bg-[url('/jibon.jpg')] bg-cover bg-center bg-no-repeat h-[100vh] lg:bg-fixed flex  flex-col justify-center items-center text-white px-4 lg:px-0 overflow-hidden" >
         <motion.div
           initial={{
             opacity: 0,
             y: -200
           }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 1, duration: 0.8 }}
-
+          transition={{ delay: 0.5, duration: 0.7, ease: 'easeOut' }}
+          exit={{ y: -200, opacity: 0 }}
 
         >
-          <h2 className="font-display text-3xl lg:text-7xl font-light italic" >New Track: <span className="not-italic font-normal border-b-2" >Mide Boiar</span> </h2>
+          <h2 className="font-display text-3xl lg:text-7xl font-light italic" >New Track: <span className="not-italic font-normal border-b-2" >Midhe Boiar</span> </h2>
         </motion.div>
 
         <motion.div className="py-5 lg:ml-24 ml-14"
@@ -53,7 +53,8 @@ export default function Home() {
           initial={{ opacity: 0 }}
 
           animate={{ opacity: 1 }}
-          transition={{ delay: 2, duration: 0.8 }}
+          transition={{ delay: 1, duration: 0.7 }}
+          exit={{ opacity: 0, transition:{delay: 0.5} }}
         >
 
           <div>
@@ -70,10 +71,11 @@ export default function Home() {
 
           initial={{
             opacity: 0,
-            y: 500
+            y: 200
           }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 1, duration: 0.8 }}
+          transition={{ delay: 0.5, duration: 0.7, ease: 'easeOut' }}
+          exit={{ y: 200, opacity: 0 }}
 
         >
 
@@ -108,7 +110,7 @@ export default function Home() {
         </motion.div>
 
 
-      </div>
+      </motion.div>
 
     </div>
   )
