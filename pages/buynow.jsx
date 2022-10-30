@@ -68,7 +68,7 @@ const BuyNow = () => {
                     </div>
                     <div className='flex flex-col items-start xl:justify-between' >
                         <h2>Your Bkash/Nagad Number</h2>
-                        <small className='mt-2' >Send ৳50 to: 01928432123 </small>
+                        <small className='mt-2' >Send ৳50 to: <span className='text-green-500 font-semibold' >01928432123</span> </small>
                         <input type="tel" required name="number" className="border-b bg-neutral-800 border-white xl:w-96 py-1 px-2 w-full" />
                     </div>
 
