@@ -31,7 +31,7 @@ const BuyNow = () => {
         };
 
 
-        const res = await fetch('https://jibondewan.com/api/buyapi', settings);
+        const res = await fetch('/api/buyapi', settings);
         const result = await res.json();
 
         if (result.success) {
@@ -50,7 +50,7 @@ const BuyNow = () => {
 
 
     return (
-        <motion.div initial={{opacity: 0}} animate={{opacity: 1}} transition={{duration: 0.5 , delay: 1.5}} exit={{opacity: 0, transition: {duration: 0.5, delay: 0.3}}} className="bg-neutral-800 flex justify-center flex-col items-center py-36 text-white h-[100vh]" >
+        <motion.div initial={{opacity: 0}} animate={{opacity: 1}} transition={{duration: 0.5 , delay: 1.5}} exit={{opacity: 0, transition: {duration: 0.5, delay: 0.3}}} className="bg-neutral-800 flex justify-center flex-col items-center pb-36 pt-60 text-white h-[100vh]" >
             <h2 className="font-display text-2xl lg:text-5xl font-light italic " > Track Name: <span className="not-italic font-normal border-b-2" >Midhe Boiar</span> </h2>
 
             <h2 className="font-type text-xl mt-7">Price: ৳50.00 Only</h2>
