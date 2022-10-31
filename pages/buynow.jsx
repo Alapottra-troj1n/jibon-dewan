@@ -2,16 +2,27 @@ import { useRouter } from 'next/router';
 import React, { useState } from 'react';
 import { toast } from 'react-toastify';
 import { animate, motion } from "framer-motion"
+import Spinner from '../components/Spinner';
 const BuyNow = () => {
 
     const router = useRouter();
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState('');
 
     const [paymentMehod, setPaymentMethod] = useState('Bkash');
+
+    if(loading) {
+        return (
+            <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-30" >
+                <Spinner />
+            </div>
+        )
+    }
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-
+        setLoading(true);
 
         const settings = {
             method: 'POST',
@@ -31,6 +42,7 @@ const BuyNow = () => {
         };
 
 
+       try{
         const res = await fetch('/api/buyapi', settings);
         const result = await res.json();
 
@@ -38,8 +50,17 @@ const BuyNow = () => {
             await toast.success('Transaction successful. You will be notified via email shorty');
             await e.target.reset();
             await router.push('/')
+            setLoading(false)
+            setError('')
         }
+       }catch(err){
+        setLoading(false)
+        setError(err.message);
+       }
 
+
+       setLoading(false)
+       setError('')
 
 
 
@@ -88,7 +109,7 @@ const BuyNow = () => {
 
 
                     <div className='flex justify-center mt-3'><button type='submit' className='bg-transparent px-7 py-2  font-display text-md flex items-center gap-2 rounded-md  border-[1px] border-white hover:bg-main hover:border-main  hover:text-neutral-800 hover:bg-white transition-all' >BUY NOW </button></div>
-
+                    <p className="text-red-400">{error}</p>
 
                 </form>
 
