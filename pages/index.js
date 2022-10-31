@@ -25,7 +25,7 @@ export default function Home() {
           property="og:title"
           content="Jibon Dewan | Musician"
         />
-        <meta name="description" content="Solo Track Released | Mide Boiar " />
+        <meta name="description" content="Solo Track Released | Midhe Boiar " />
         <meta property="og:image" content={"/jibon.jpg"} />
         <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/651/651717.png" />
       </Head>
